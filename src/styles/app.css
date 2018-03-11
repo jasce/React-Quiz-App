@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.home-wrapper {
+    text-align: center;
+    height: 100vh;
+    background-color: #dfdfdf;
+    padding-top: 40vh;
+}
+
+.home-wrapper > h1 {
+    font-style: italic;
+    margin-top: 0;
+    font-size: 40px;
+}

@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 
 
@@ -31,8 +32,13 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/index.html'),
-    })
+    }),
+    //new UglifyJsPlugin
   ],
+
+  performance: {
+    hints: false
+  },
 
   resolve: {
     extensions: ['.js', '.jsx'],

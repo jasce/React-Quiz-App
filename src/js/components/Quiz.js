@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchQuestionsFromAPI } from '../actions';
 import QuizContent from './QuizContent';
+import Button from './Button'
 
 class Quiz extends React.Component {
 
@@ -47,20 +47,25 @@ class Quiz extends React.Component {
     render() {
         var length = this.props.quiz && this.props.quiz.length;
         return (
-            <div>
-                <h1>Welcome to Quiz Page</h1>
-
+            <div className="container">
                 {this.state && this.state.curr_index < length ? (
-                    <QuizContent
-                        question={this.props.quiz[this.state.curr_index]}
-                        nextQuestion={this.nextQuestion}
-                        correctAnswer={this.correctAnswer}
-                        wrongAnswer={this.wrongAnswer}
-                    />
-                ) : (
                     <div>
+                        <div className="text-center">
+                            <h1>Welcome to Quiz Page</h1>
+                            <p><small>Click on Choices to submit your answer</small></p>
+                        </div>
+                        <QuizContent
+                            question={this.props.quiz[this.state.curr_index]}
+                            nextQuestion={this.nextQuestion}
+                            correctAnswer={this.correctAnswer}
+                            wrongAnswer={this.wrongAnswer}
+                        />
+                    </div>
+                ) : (
+                    <div className="text-center">
                         <h1>Test Completed: </h1>
-                        <p>You have answered {this.state.score} questions correctly!</p>
+                        <p>You have answered {this.state.score} question(s) correctly!</p>
+
                     </div>
                 )}
 

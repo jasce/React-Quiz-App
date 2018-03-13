@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 const Button = (props) => (
-    <Link to={props.to} >{props.text}</Link>
+    <Link to={props.to} className={props.cssClass} >{props.text}</Link>
 )
 
 

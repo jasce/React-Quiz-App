@@ -9,6 +9,7 @@ const Home = () => {
             <Button
                 to="/quiz"
                 text="Enter Test"
+                cssClass="btn-skip"
             />
         </div>
     )

@@ -15,7 +15,8 @@ module.exports = {
     filename: "bundle.js"
   },
   devServer: {
-    contentBase: "./src"
+    contentBase: "./src",
+    historyApiFallback: true
   },
   module: {
     rules: [
@@ -33,7 +34,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/index.html'),
     }),
-    //new UglifyJsPlugin
+    new webpack.LoaderOptionsPlugin({
+       debug: true
+     }),
+    new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+    }),
   ],
 
   performance: {
